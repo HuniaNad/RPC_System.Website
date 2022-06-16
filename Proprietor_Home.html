@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RPC System</title> 
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+        body{
+            background-color: #ebebeb;
+            background-size: cover;
+            font-family: 'Abhaya Libre';
+            margin: 0px;
+        }
+        
+        .header{
+            width: auto;
+            height: 100px;    
+            background-color: #000;   
+            border-radius: 0px 0px 25px 25px;    
+        }
+        .logo{
+            width: 160px;
+            margin: 14px;
+            margin-left: 21px;
+            position: absolute;
+        }
+        .logoutDiv{
+            color: #ebebeb;
+            position: absolute;
+            top: 26px;
+            right: 105px
+        }
+        .logoutDiv p{
+            font-size: 22px;
+            text-align: center;
+            margin: -8px;
+            font-size: 22px;
+        }
+        #logout{
+            border: none;
+            background-color: #FDB64D;
+            padding: 7px 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 19px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        .btn:hover{
+            background-color: #fdb74de8;
+            box-shadow: 1px 3px 18px rgba(255, 255, 255, 0.37);
+        }
+        .displayPicture{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .displayPicture p{
+            border: 1px #ebebeb solid;
+            padding: 30px 0px;
+            margin: 10px 4px 9px 0px;
+            position: absolute;
+            top: 10px;
+            right: 97px;
+        }
+        .headerbtn{
+            position: absolute;
+            top: 38px;
+            right: 240px;
+        }
+        .headerbtn div{
+            color: #ebebeb;
+            display: inline-block;
+            font-style: normal;
+            font-size: 21px;
+            padding-right: 17px; 
+            cursor: pointer;
+        }
+        .headerbtn a{
+            color: #ebebeb;
+            text-decoration: none;
+        }
+        
+        #profile img{
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            border-radius: 50px;
+            
+        }
+
+        .welcomeMsg{
+            font-size: 50px;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 1px 3px 5px rgb(0 0 0 / 45%);
+            margin: 24px 0px -25px 0px
+        }
+
+        .body{
+            background-color: #F4BD6C;
+            padding: 17px 70px 74px 70px;
+            text-align: center;
+            font-size: 40px;
+            margin: 55px 110px 120px 110px;
+            box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.25);
+            border-radius: 34px;
+        }
+        h2{
+            font-size: 40px;
+            margin: 8px 8px 21px 8px;
+        }
+        .gallery{
+            font-size: 18px;
+            margin: 10px;
+            display: inline-block;
+            width: 204px;
+            border-radius: 18px 18px 18px 18px;
+            transition-duration: 0.3s;
+        }
+        .gallery:hover{
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 46%);
+        }
+        .gallery img{
+            border-radius: 18px 18px 0px 0px;
+        }
+        .gallery div{
+            background: black;
+            color: #ebebeb;
+            margin-top: -6px;
+            padding: 5px;
+            border-radius: 0px 0px 18px 18px;
+        }
+
+        .footer{
+            text-align: center;
+            margin-top: 100px;
+            padding: 14px 5px 5px 5px;
+            background-color: #000; 
+            margin-bottom: 0px;
+        } 
+        .socialBtn{
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            padding: 8px;
+            background-color: #F4BD6C;
+            border-radius: 30px;
+            margin: 10px;
+            transition-duration: 0.1s;
+
+        }
+        .socialBtn:hover {
+            box-shadow: 0px 2px 8px rgba(235, 235, 235, 46%);
+        }
+        .footer p{
+            color: rgb(235, 235, 235);
+            margin: 2px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <img class="logo" src="images/RPCSystemLogo.png" />
+        
+        <div class="displayPicture">
+            <p></p>
+            <a id="profile">
+                <img src="images/displaypicture.jpg" width=80px/>
+            </a>
+        </div> 
+
+        <div class="logoutDiv">
+            <p>Ahmed Ali</p>
+            <button onclick="document.location='homepage.html'" class="btn" id="logout">Log out</button>
+        </div>
+
+        <div class="headerbtn">
+            <div> <a href="RoleSelection_LoggedIn.html">Home</a></div>
+            <div>Feedback</div>
+            <div>About us</div>
+        </div>  
+
+        
+
+    </div>
+
+    <p class="welcomeMsg">Welcome, Ahmed Ali!</p>
+
+    <div class="body">    
+        <h2>Owned Properties</h2> 
+
+        <div class="gallery">
+            <a href="proprietor_menu.html">
+                <img src="images/prop1.jpg" title="House 40 - I9/4" width="100%" height="145px">
+            </a>
+            <div>
+                House 40 - I9/4 
+            </div>
+        </div>
+    
+        <div class="gallery">
+            <a href="proprietor_menu.html">
+                <img src="images/prop2.jpg" title="House 40 - F9/1" width="100%" height="145px">
+            </a>
+            <div>
+                House 40 - F9/1     
+            </div>
+        </div>
+
+        <div class="gallery">
+            <a href="proprietor_menu.html">
+                <img src="images/prop3.jpg" title="House 33 - DHA" width="100%" height="145px">
+            </a>
+            <div>
+                House 33 - DHA     
+            </div>
+        </div>
+
+        <div class="gallery">
+            <img src="images/prop - add.jpg" title="Add Property" width="100%" height="145px">
+        <div>
+            Add Property
+        </div>
+    </div>
+        
+        
+    </div>
+
+    <div class="footer">
+        <div class="socialBtn"> 
+            <a href="https://www.facebook.com" target="_blank">
+            <img src="images/facebook.png" alt="facebook" title="Facebook"  width="16px">
+            </a>
+        </div>
+
+        <div class="socialBtn">
+            <a href="https://www.instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="instagram" title="Instagram" width="16px">
+            </a>
+        </div>
+
+        <div class="socialBtn">
+            <a href="https://www.gmail.com" target="_blank">
+            <img src="images/email.png" alt="email" title="Email" width="16px">
+            </a>
+        </div>
+
+        <p>&copy; 2020 RPC System</p>
+        <p style="cursor: pointer;">Terms of Use | Privacy Policy  </p>
+    </div>
+
+</body>
+
+</html>
+
+<script src="botCode.js"></script>

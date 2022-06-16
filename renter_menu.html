@@ -1,0 +1,196 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Renter - Complaint</title>
+		<link rel="stylesheet" type="text/css" href="css/RP_menu.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<div class="column" id="leftcolumn">
+				<div id="navigation">  
+					<img class="logo" src="images/RPCSystemLogo.png" />
+				</div>
+				<div class="tab">
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Property')">
+							<i class="fa fa-home" aria-hidden="true"></i>Property
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks active" onclick="openTab(event, 'Complaints')" id="defaultOpen">
+							<i class="fa fa-info-circle" aria-hidden="true"></i>Complaints
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Rent Payment')">
+							<i class="fa fa-credit-card" aria-hidden="true"></i>Rent Payment
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Inbox')">
+							<i class="fa fa-comment-o" aria-hidden="true"></i>Inbox
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Lease')">
+							<i class="fa fa-briefcase" aria-hidden="true"></i>Lease
+						</button>
+					</div>
+					
+				</div>
+				<div class="footer">
+					<div class="socialBtn"> 
+						<a href="https://www.facebook.com" target="_blank">
+						<img src="images/facebook.png" alt="facebook" title="Facebook"  width="13px">
+						</a>
+					</div>
+
+					<div class="socialBtn">
+						<a href="https://www.instagram.com" target="_blank">
+						<img src="images/instagram.png" alt="instagram" title="Instagram" width="13px">
+						</a>
+					</div>
+
+					<div class="socialBtn">
+						<a href="https://www.gmail.com" target="_blank">
+						<img src="images/email.png" alt="email" title="Email" width="13px">
+						</a>
+					</div>
+
+					<p>&copy; 2020 RPC System</p>
+					<p style="cursor: pointer;">Terms of Use | Privacy Policy  </p>
+				</div>
+			</div>
+			
+			<div class="column" id="rightcolumn">
+				<div id="navigation">
+					<div class="header">
+						<div id="userTag">
+							<img src="images/role.png" />Renter
+						</div>
+						<div class="displayPicture">
+							<p></p>
+							<a id="profile">
+								<img src="images/displaypicture.jpg" width="80px"/>
+							</a>
+						</div> 
+
+						<div class="logoutDiv">
+							<p>Ahmed Ali</p>
+							<button onclick="document.location='homepage.html'" class="btn" id="logout">Log out</button>
+						</div>
+
+						<div class="headerbtn">
+							<div> <a href="Renter_Home.html">Home</a></div>
+							<div>Feedback</div>
+							<div>About us</div>
+						</div>  
+
+						
+
+					</div>
+				</div>
+				<div class="content">
+					<div id="Property" class="tabcontent">
+					</div>
+					
+					<div id="Complaints" class="tabcontent">
+						<div id="form-container">
+							
+							<table>
+								<tr>
+									<td>
+										<span class="">Complaint Type:</span>
+									</td>
+									<td>
+										<select id="complaintType" name="complaintType" >
+											<option></option>
+											<option value="Security">Security</option>
+											<option value="Maintainance">Maintainance</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="">Description:</span>
+									</td>
+									<td>
+										<textarea class="" name="message" spellcheck="false"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									</td>
+									<td>
+										<button type="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Submit</button>
+									</td>
+								</tr>
+							</table>
+							
+							<div id="id01" class="modal">
+								<div class="modal-content">
+									<i class="fa fa-check" aria-hidden="true"></i>Complaint Submitted!
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="Rent_Payment" class="tabcontent">
+					</div>
+					
+					<div id="Inbox" class="tabcontent">
+					</div>
+					
+					<div id="Lease" class="tabcontent">
+					</div>
+					
+				</div>
+			</div>
+			
+		 </div>
+	</body>
+</html>
+
+<script>
+	window.watsonAssistantChatOptions = {
+		integrationID: "3a807648-7480-433d-b8d0-afb9448102ab", // The ID of this integration.
+		region: "us-south", // The region your integration is hosted in.
+		serviceInstanceID: "085d9d9b-52cc-4bba-a0b9-f83e7a74e70a", // The ID of your service instance.
+		onLoad: function(instance) { instance.render(); }
+		};
+	setTimeout(function(){
+		const t=document.createElement('script');
+		t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		document.head.appendChild(t);
+	});
+
+	
+	function openTab(evt, leftMenuOption) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		leftMenuOption = leftMenuOption.replace(" ", "_");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(leftMenuOption).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	
+	// Get the modal
+	var modal = document.getElementById('id01');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+</script>

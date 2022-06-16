@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RPC System</title> 
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+        body{
+            background-image: url(images/background_dark.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Abhaya Libre';
+            margin: 0px;
+            position: relative;
+        }
+        .top_outline{
+            width: auto;
+            height: 10px; 
+            background-color: #E2E0E0;
+        }
+        .header{
+            width: auto;
+            height: 100px;            
+        }
+        .logo{
+            width: 160px;
+            margin: 14px;
+            margin-left: 21px;
+            display: inline-block;
+        }
+        .btn{
+            border: none;
+            background-color: #FDB64D;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 27px 5px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        .btn:hover{
+            background-color: #fdb74de8;
+            box-shadow: 1px 3px 18px rgba(255, 255, 255, 0.37);
+        }
+        .headerbtn{
+            display: inline;
+            float: right;
+            clear: both;
+        }
+        .headerbtn div{
+            color: #FFFFFF;
+            display: inline-block;
+            font-style: normal;
+            font-size: 21px;
+            padding-right: 17px; 
+            cursor: pointer;
+        }
+        #signup{
+            margin-right: 15px;
+        }
+        #login{
+            margin-right: 3px;
+        }
+
+        .body{
+            width: auto;
+            height: auto;
+            color: #FFFFFF;
+            padding: 110px;
+            text-align: center;
+            font-size: 26px;
+        }
+        #getStartedBtn{
+            border: none;
+            background-color: #FDB64D;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            margin: 27px;
+            padding: 12px 95px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        #getStartedBtn:hover{
+            background-color: #fdb74de8;
+            box-shadow: 1px 3px 18px rgba(255, 255, 255, 0.37);
+            text-shadow: 0px 4px 9px rgba(0, 2, 4, 0.60);
+        }
+
+        .footer{
+            text-align: center;
+            margin-top: 100px;
+            padding: 14px 5px 5px 5px;
+            background-color: #E2E0E0; 
+        } 
+        .socialBtn{
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            padding: 8px;
+            background-color: #F4BD6C;
+            border-radius: 30px;
+            margin: 10px;
+            transition-duration: 0.1s;
+        }
+        .socialBtn:hover {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 46%);
+        }
+        .footer p{
+            color: black;
+            margin: 2px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+
+        #popup_login{
+            font-size: 50px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(126 125 125 / 45%);
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+        .loginDiv{
+            background-color: #000;
+            width: 680px;
+            height: 442px;
+            margin: 122px 165px 90px 214px;
+            border-radius: 40px;
+            box-shadow: 1px 3px 18px rgb(0 0 0 / 80%);
+            position: relative;
+            margin: auto;
+            margin-top: 144px;
+        }
+        .loginDiv p{
+            font-size: 20px;
+            color: #E2E0E0;
+            
+        }
+        .loginDiv h3{
+            font-weight: 500;
+            margin: 0px;
+        }
+        .loginDiv [type=text]{
+            width: 70%;
+            border: none;
+            background-color: rgba(63, 63, 63, 1);
+            padding: 8px 20px;
+            border-radius: 13px;
+            font-size: 24px;
+            font-family: 'Abhaya Libre';
+            background-image: url(images/user_white.png);
+            background-position: 480px;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            color: #E2E0E0;
+        }
+        .loginDiv [type=password]{
+            margin-top: 26px;
+            width: 70%;
+            border: none;
+            background-color: rgba(63, 63, 63, 1);
+            padding: 8px 20px;
+            border-radius: 13px;
+            font-size: 24px;
+            font-family: 'Abhaya Libre';
+            background-image: url(images/hide.png);
+            background-position: 480px;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            color: #E2E0E0;
+        }
+        ::placeholder{
+            color: #E2E0E0;   
+        }
+        .loginInputs{
+            margin-top: 30px;
+        }
+        .loginInputs p{
+            text-align: right;
+            margin-right: 105px;
+            margin-top: 6px;
+            font-size: 16px;
+            color: #fdba57;
+            cursor: pointer;
+        }
+        .loginSubmit button{
+            border: none;
+            background-color: rgba(116, 51, 252, 1);
+            color: #E2E0E0;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 0px 33px 0px 33px;
+            padding: 6px 54px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        .loginSubmit button:hover {
+            background-color: rgba(116, 51, 252, 1);
+            box-shadow: 0px 2px 13px rgba(255, 255, 255, 0.37);
+        }
+        .loginSubmit p{
+            font-size: 14px;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+
+        #popup_signup{
+            font-size: 50px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(126 125 125 / 45%);
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+        .signupDiv{
+            background-color: #000;
+            width: 848px;
+            height: 610px;
+            border-radius: 40px;
+            box-shadow: 1px 3px 18px rgb(0 0 0 / 80%);
+            position: relative;
+            margin: auto;
+            margin-top: 120px;
+        }
+        .signupDiv p{
+            font-size: 20px;
+            color: #E2E0E0;      
+        }
+        .signupDiv h3{
+            font-weight: 500;
+            margin: 0px;
+        }
+        #table1 input[type=text]{
+            border: none;
+            width: 55%;       
+            margin-left: 25px;
+            margin-right: 18px;
+            background-color: rgba(63, 63, 63, 1);
+            padding: 9px 20px;
+            border-radius: 13px;
+            font-size: 18px;
+            font-family: 'Abhaya Libre';
+            color: #E2E0E0;
+        }
+        #table2 input[type=text]{
+            border: none;
+            width: 174%;
+            margin-left: 18px;
+            margin-right: 18px;
+            background-color: rgba(63, 63, 63, 1);
+            padding: 9px 20px;
+            border-radius: 13px;
+            font-size: 18px;
+            font-family: 'Abhaya Libre';
+            color: #E2E0E0;
+        }
+        .signupInputs{
+            margin-top: 4px;
+            margin-left: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .signupInputs label{
+            font-size: 25px;
+            color: #fdba57;
+            
+        }
+        .signupInputs p{
+            text-align: right;
+            margin-right: 105px;
+            margin-top: 6px;
+            font-size: 16px;
+            color: #fdba57;
+            cursor: pointer;
+        }  
+        .signupSubmit button{
+            border: none;
+            background-color: rgba(116, 51, 252, 1);
+            color: #E2E0E0;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 0px 33px 0px 33px;
+            padding: 6px 54px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        .signupSubmit button:hover {
+            background-color: rgba(116, 51, 252, 1);
+            box-shadow: 0px 2px 13px rgba(255, 255, 255, 0.37);
+        }
+        .signupSubmit p{
+            font-size: 14px;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="top_outline">
+    </div>
+
+    <div class="header">
+        <img class="logo" src="images/RPCSystemLogo.png" />
+        
+        <div class="headerbtn">
+            <div>About us</div>
+
+            <button onclick="document.getElementById('popup_login').style.display = 'block'" class="btn" id="login">Login</button>
+
+            <p style="display: inline;
+            border: 1px #FFFFFF solid;
+            padding: 20px 0px;"></p>
+
+            <button onclick="document.getElementById('popup_signup').style.display = 'block'" class="btn" id="signup">Sign up</button>
+        </div>       
+
+    </div>
+
+    <div class="body">
+        <div id="popup_login">
+            <div class="loginDiv">
+                <p style="text-align: left; padding: 26px 0px 0px 45px; margin-bottom: 0px; cursor: pointer;">
+                    <a onclick="document.getElementById('popup_login').style.display = 'none'">Go back</a>
+                </p>
+
+                <h3>Login</h3>
+                <div class="loginInputs">
+                    <input id="email" type="text" name="Email" placeholder="Email" required/>
+
+                    <input id="password" type="password" name="Password" placeholder="Password" required/>
+                    <p>Forgot Password?</p>
+                </div>
+                
+                <div class="loginSubmit">
+                    <button onclick="document.location='RoleSelection_LoggedIn.html'">Login</button>
+                    <p>
+                        <a onclick="document.getElementById('popup_login').style.display = 'none';
+                        getElementById('popup_signup').style.display = 'block'">
+                            Don't have an account? Sign up
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="popup_signup">
+            <div class="signupDiv">
+                <p style="text-align: left; padding: 26px 0px 0px 45px; margin-bottom: 0px; cursor: pointer;">
+                    <a onclick="document.getElementById('popup_signup').style.display = 'none'">Go back</a>
+                </p>
+
+                <h3>Sign up</h3>
+                <div class="signupInputs">
+                    <table id="table1" cellspacing="0" style="padding-left: 45px;">    
+                        <tr>
+                            <td>
+                                <label for="fname">First Name</label>
+                            </td>
+                            <td>
+                                <input id="fname" type="text" name="fname"/>
+                            </td>
+                            <td>
+                                <label for="lname">Last Name</label>
+                            </td>
+                            <td>
+                                <input id="lname" type="text" name="lname"/>
+                            </td>  
+                        </tr>
+                    </table>
+
+                    <table id="table2" cellspacing="0" style="padding-left: 45px;">
+                        <tr>
+                            <td>
+                                <label for="email">Email</label>
+                            </td>
+                            <td>
+                                <input id="email" type="text" name="email"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="cnic">CNIC</label>
+                            </td>
+                            <td>
+                                <input id="cnic" type="text" name="cnic"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="phone#">Phone Number</label>
+                            </td>
+                            <td>
+                                <input id="phone#" type="text" name="phone#"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="password">Password</label>
+                            </td>
+                            <td>
+                                <input id="password" type="text" name="password"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="confPassword">Confirm Password</label>
+                            </td>
+                            <td>
+                                <input id="confPassword" type="text" name="confPassword"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="signupSubmit">
+                    <button onclick="document.getElementById('popup_signup').style.display = 'none'; document.getElementById('popup_login').style.display = 'block'">Sign up</button>
+                    <p>
+                        <a onclick="document.getElementById('popup_signup').style.display = 'none';
+                        getElementById('popup_login').style.display = 'block'">
+                            Already have an account? Log in
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus consequatur error adipisci sint modi harum consequuntur aliquid corporis, consectetur asperiores atque maxime omnis blanditiis eveniet laudantium ipsa magni ut reprehenderit.</p>
+        <button id="getStartedBtn" onclick="document.location='RoleSelection_LoggedOut.html'">
+            <p style="display: inline;">Get Started</p>
+            <img src="images/home.png" width="20px" style="margin-left: 10px; " />
+        </button>
+    </div>
+
+    <div class="footer">
+        <div class="socialBtn"> 
+            <a href="https://www.facebook.com" target="_blank">
+            <img src="images/facebook.png" alt="facebook" title="Facebook"  width="16px">
+            </a>
+        </div>
+
+        <div class="socialBtn">
+            <a href="https://www.instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="instagram" title="Instagram" width="16px">
+            </a>
+        </div>
+
+        <div class="socialBtn">
+            <a href="https://www.gmail.com" target="_blank">
+            <img src="images/email.png" alt="email" title="Email" width="16px">
+            </a>
+        </div>
+
+        <p>&copy; 2020 RPC System</p>
+        <p style="cursor: pointer;">Terms of Use | Privacy Policy  </p>
+    </div>
+
+</body>
+
+</html>
+
+<script src="botCode.js"></script>

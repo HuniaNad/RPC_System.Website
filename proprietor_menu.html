@@ -1,0 +1,378 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Proprietor - Complaint</title>
+		<link rel="stylesheet" type="text/css" href="css/RP_menu.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<div class="column" id="leftcolumn">
+				<div id="navigation">  
+					<img class="logo" src="images/RPCSystemLogo.png" />
+				</div>
+				<div class="tab">
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Property')">
+							<i class="fa fa-home" aria-hidden="true"></i>Property
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks active" onclick="openTab(event, 'Complaints')" id="defaultOpen">
+							<i class="fa fa-info-circle" aria-hidden="true"></i>Complaints
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Rent Payment')">
+							<i class="fa fa-credit-card" aria-hidden="true"></i>Rent Payment
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Inbox')">
+							<i class="fa fa-comment-o" aria-hidden="true"></i>Inbox
+						</button>
+					</div>
+					<div class="tablink-bg">
+						<button class="tablinks" onclick="openTab(event, 'Lease')">
+							<i class="fa fa-briefcase" aria-hidden="true"></i>Lease
+						</button>
+					</div>
+					
+				</div>
+				<div class="footer">
+					<div class="socialBtn"> 
+						<a href="https://www.facebook.com" target="_blank">
+						<img src="images/facebook.png" alt="facebook" title="Facebook"  width="13px">
+						</a>
+					</div>
+
+					<div class="socialBtn">
+						<a href="https://www.instagram.com" target="_blank">
+						<img src="images/instagram.png" alt="instagram" title="Instagram" width="13px">
+						</a>
+					</div>
+
+					<div class="socialBtn">
+						<a href="https://www.gmail.com" target="_blank">
+						<img src="images/email.png" alt="email" title="Email" width="13px">
+						</a>
+					</div>
+
+					<p>&copy; 2020 RPC System</p>
+					<p style="cursor: pointer;">Terms of Use | Privacy Policy  </p>
+				</div>
+			</div>
+			
+			<div class="column" id="rightcolumn">
+				<div id="navigation">
+					<div class="header">
+						<div id="userTag">
+							<img src="images/role.png" />Proprietor
+						</div>
+						<div class="displayPicture">
+							<p></p>
+							<a id="profile">
+								<img src="images/displaypicture.jpg" width="80px"/>
+							</a>
+						</div> 
+
+						<div class="logoutDiv">
+							<p>Ahmed Ali</p>
+							<button onclick="document.location='homepage.html'" class="btn" id="logout">Log out</button>
+						</div>
+
+						<div class="headerbtn">
+							<div> <a href="Proprietor_Home.html">Home</a></div>
+							<div>Feedback</div>
+							<div>About us</div>
+						</div>  
+
+						
+
+					</div>
+				</div>
+				<div class="content">
+					<div id="Property" class="tabcontent">
+					</div>
+					
+					<div id="Complaints" class="tabcontent">
+						<div class="tab">
+							<button class="tablinks_h active" onclick="openTab2(event, 'All')" >All</button>
+							<button class="tablinks_h" onclick="openTab2(event, 'On Hold')">On Hold</button>
+							<button class="tablinks_h" onclick="openTab2(event, 'Resolved')">Resolved</button>
+							<button class="tablinks_h" onclick="openTab2(event, 'Pending')">Pending</button>
+						</div>
+
+						<div id="All" class="tabcontent_h" style="display: block;">
+							<table class="comTable">
+							  <tr>
+								<th>Date</th>
+								<th>U-ID</th>
+								<th>User Name</th>
+								<th>Property ID</th>
+								<th>Type</th>
+								<th>Description</th>
+								<th>Status</th>
+							  </tr>
+							  <tr>
+								<td>25-04-2022</td>
+								<td>#U002</td>
+								<td>Saira Ahmed</td>
+								<td>#P0123</td>
+								<td>Security</td>
+								<td>This is an issue...</td>
+								<td>
+									<button class="buttonR pending">Pending</button>
+									<div class="dropdown">
+										<button onclick="myFunction(this.nextSibling)" class="dropbtn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+										<div id="myDropdown" class="dropdown-content">
+											<a href="#">Mark as Resolved</a>
+											<a href="#">Mark as On-Hold</a>
+											<a href="#">Mark as Pending</a>
+										</div>
+									</div>
+									
+								</td>
+							  </tr>
+							  <tr>
+								<td>24-04-2022</td>
+								<td>#U009</td>
+								<td>Ahmed Shazad</td>
+								<td>#P0198</td>
+								<td>Maintainance</td>
+								<td>Room wallpaper...</td>
+								<td>
+									<button class="buttonR onHold">On-Hold</button>
+									<div class="dropdown">
+										<button onclick="myFunction(this.nextSibling)" class="dropbtn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+										<div id="myDropdown" class="dropdown-content">
+											<a href="#">Mark as Resolved</a>
+											<a href="#">Mark as On-Hold</a>
+											<a href="#">Mark as Pending</a>
+										</div>
+									</div>
+								</td>
+							  </tr>
+							  <tr>
+								<td>23-04-2022</td>
+								<td>#U012</td>
+								<td>Sarmad Ali</td>
+								<td>#P0093</td>
+								<td>Maintainance</td>
+								<td>Tiles have started...</td>
+								<td>
+									<button class="buttonR resolved">Resolved</button>
+									<div class="dropdown">
+										<button onclick="myFunction(this.nextSibling)" class="dropbtn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+										<div id="myDropdown" class="dropdown-content">
+											<a href="#">Mark as Resolved</a>
+											<a href="#">Mark as On-Hold</a>
+											<a href="#">Mark as Pending</a>
+										</div>
+									</div>
+								</td>
+							  </tr>
+							</table>
+							<div class="tab">
+								<button class="page"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Previous</button>
+								<button class="page orange">1</button>
+								<button class="page">Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+							</div>
+						</div>
+
+						<div id="On_Hold" class="tabcontent_h">
+							<table class="comTable">
+							  <tr>
+								<th>Date</th>
+								<th>U-ID</th>
+								<th>User Name</th>
+								<th>Property ID</th>
+								<th>Type</th>
+								<th>Description</th>
+								<th>Status</th>
+							  </tr>
+							  <tr>
+								<td>24-04-2022</td>
+								<td>#U009</td>
+								<td>Ahmed Shazad</td>
+								<td>#P0198</td>
+								<td>Maintainance</td>
+								<td>Room wallpaper...</td>
+								<td>
+									<button class="buttonR onHold">On-Hold</button>
+									<div class="dropdown">
+										<button onclick="myFunction(this.nextSibling)" class="dropbtn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+										<div id="myDropdown" class="dropdown-content">
+											<a href="#">Mark as Resolved</a>
+											<a href="#">Mark as On-Hold</a>
+											<a href="#">Mark as Pending</a>
+										</div>
+									</div>
+								</td>
+							  </tr>
+							</table>
+							<div class="tab">
+								<button class="page"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Previous</button>
+								<button class="page orange">1</button>
+								<button class="page">Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+							</div>
+						</div>
+
+						<div id="Resolved" class="tabcontent_h">
+							<table class="comTable">
+							  <tr>
+								<th>Date</th>
+								<th>U-ID</th>
+								<th>User Name</th>
+								<th>Property ID</th>
+								<th>Type</th>
+								<th>Description</th>
+								<th>Status</th>
+							  </tr>
+							  <tr>
+							  <tr>
+								<td>23-04-2022</td>
+								<td>#U012</td>
+								<td>Sarmad Ali</td>
+								<td>#P0093</td>
+								<td>Maintainance</td>
+								<td>Tiles have started...</td>
+								<td>
+									<button class="buttonR resolved">Resolved</button>
+									<div class="dropdown">
+										<button onclick="myFunction(this.nextSibling)" class="dropbtn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+										<div id="myDropdown" class="dropdown-content">
+											<a href="#">Mark as Resolved</a>
+											<a href="#">Mark as On-Hold</a>
+											<a href="#">Mark as Pending</a>
+										</div>
+									</div>
+								</td>
+							  </tr>
+							</table>
+							<div class="tab">
+								<button class="page"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Previous</button>
+								<button class="page orange">1</button>
+								<button class="page">Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+							</div>
+						</div>
+
+						<div id="Pending" class="tabcontent_h">
+							<table class="comTable">
+							  <tr>
+								<th>Date</th>
+								<th>U-ID</th>
+								<th>User Name</th>
+								<th>Property ID</th>
+								<th>Type</th>
+								<th>Description</th>
+								<th>Status</th>
+							  </tr>
+							  <tr>
+								<td>25-04-2022</td>
+								<td>#U002</td>
+								<td>Saira Ahmed</td>
+								<td>#P0123</td>
+								<td>Security</td>
+								<td>This is an issue...</td>
+								<td>
+									<button class="buttonR pending">Pending</button>
+									<div class="dropdown">
+										<button onclick="myFunction(this.nextSibling)" class="dropbtn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+										<div id="myDropdown" class="dropdown-content">
+											<a href="#">Mark as Resolved</a>
+											<a href="#">Mark as On-Hold</a>
+											<a href="#">Mark as Pending</a>
+										</div>
+									</div>
+								</td>
+							  </tr>
+							</table>
+							<div class="tab">
+								<button class="page"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Previous</button>
+								<button class="page orange">1</button>
+								<button class="page">Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+							</div>
+						</div>
+					</div>
+					
+					<div id="Rent_Payment" class="tabcontent">
+					</div>
+					
+					<div id="Inbox" class="tabcontent">
+					</div>
+					
+					<div id="Lease" class="tabcontent">
+					</div>
+					
+				</div>
+			</div>
+			
+		 </div>
+	</body>
+</html>
+
+<script>
+	window.watsonAssistantChatOptions = {
+		integrationID: "3a807648-7480-433d-b8d0-afb9448102ab", // The ID of this integration.
+		region: "us-south", // The region your integration is hosted in.
+		serviceInstanceID: "085d9d9b-52cc-4bba-a0b9-f83e7a74e70a", // The ID of your service instance.
+		onLoad: function(instance) { instance.render(); }
+		};
+	setTimeout(function(){
+		const t=document.createElement('script');
+		t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		document.head.appendChild(t);
+	});
+
+
+	function openTab2(evt, leftMenuOption) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent_h");
+		leftMenuOption = leftMenuOption.replace(" ", "_");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks_h");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(leftMenuOption).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	function openTab(evt, leftMenuOption) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		leftMenuOption = leftMenuOption.replace(" ", "_");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(leftMenuOption).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	
+	function myFunction(e) {
+	  e.nextElementSibling.classList.toggle("show");
+	}
+
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!(event.target.matches('.dropbtn') || event.target.matches('.fa-ellipsis-v'))) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+		  }
+		}
+	  }
+	}
+</script>

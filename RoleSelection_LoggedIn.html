@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RPC System</title> 
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+        body{
+            background-image: url(images/background_dark.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Abhaya Libre';
+            margin: 0px;
+        }
+        .top_outline{
+            width: auto;
+            height: 10px; 
+            background-color: #E2E0E0;
+        }
+        .header{
+            width: auto;
+            height: 100px;    
+            background-color: #000;   
+            border-radius: 0px 0px 25px 25px;    
+        }
+        .logo{
+            width: 160px;
+            margin: 14px;
+            margin-left: 21px;
+            position: absolute;
+        }
+        .logoutDiv{
+            color: #E2E0E0;
+            position: absolute;
+            top: 35px;
+            right: 105px
+        }
+        .logoutDiv p{
+            font-size: 22px;
+            text-align: center;
+            margin: -8px;
+            font-size: 22px;
+        }
+        #logout{
+            border: none;
+            background-color: #FDB64D;
+            padding: 7px 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 19px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        .btn:hover{
+            background-color: #fdb74de8;
+            box-shadow: 1px 3px 18px rgba(255, 255, 255, 0.37);
+        }
+        .displayPicture{
+            position: absolute;
+            top: 10px;
+            right: 0px;
+        }
+        .displayPicture p{
+            border: 1px #FFFFFF solid;
+            padding: 30px 0px;
+            margin: 10px 4px 9px 0px;
+            position: absolute;
+            top: 10px;
+            right: 97px;
+        }
+        .headerbtn{
+            position: absolute;
+            top: 47px;
+            right: 240px;
+        }
+        .headerbtn div{
+            color: #FFFFFF;
+            display: inline-block;
+            font-style: normal;
+            font-size: 21px;
+            padding-right: 17px; 
+            cursor: pointer;
+        }
+        #profile img{
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            border-radius: 50px;
+            
+        }
+
+        .body{
+            background-color: #F4BD6C;
+            padding: 70px 70px 80px 70px;
+            text-align: center;
+            font-size: 40px;
+            margin: 55px 160px 120px 160px;
+            box-shadow: 0px 2px 27px rgb(255 255 255 / 20%);
+            border-radius: 34px;
+        }
+        .chooseRole img{
+            width: 90px;
+            border-radius: 90px;
+            box-shadow: 1px 3px 18px rgb(0 0 0 / 37%);
+        }
+        .chooseRole p{
+            font-size: 44px;
+            margin: -1px;
+            text-shadow: 1px 3px 5px rgb(0 0 0 / 45%);
+        }
+        .RPBtns{
+            margin-top: 10px;
+        }
+        .roleBtn{
+            border: none;
+            background-color: rgba(0, 0, 0, 0.92);
+            color: rgba(253, 186, 87, 1);
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+            margin: 30px 63px 0px 63px;
+            padding: 5px;
+            width: 230px;
+            cursor: pointer;
+            border-radius: 60px;
+            display: inline-block;
+            font-family: 'Abhaya Libre';
+            transition-duration: 0.3s;
+        }
+        .roleBtn:hover {
+            background-color: rgba(0, 0, 0, 0.897);
+            box-shadow: 1px 3px 18px rgb(0 0 0 / 37%);
+        }
+
+        .footer{
+            text-align: center;
+            margin-top: 100px;
+            padding: 14px 5px 5px 5px;
+            background-color: #E2E0E0; 
+            margin-bottom: 0px;
+        } 
+        .socialBtn{
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            padding: 8px;
+            background-color: #F4BD6C;
+            border-radius: 30px;
+            margin: 10px;
+            transition-duration: 0.1s;
+
+        }
+        .socialBtn:hover {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 46%);
+        }
+        .footer p{
+            color: black;
+            margin: 2px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="top_outline">
+    </div>
+
+    <div class="header">
+        <img class="logo" src="images/RPCSystemLogo.png" />
+        
+        <div class="displayPicture">
+            <p></p>
+            <a id="profile">
+                <img src="images/displaypicture.jpg" width=80px/>
+            </a>
+        </div> 
+
+        <div class="logoutDiv">
+            <p>Ahmed Ali</p>
+            <button onclick="document.location='homepage.html'" class="btn" id="logout">Log out</button>
+        </div>
+
+        <div class="headerbtn">
+            <div>Feedback</div>
+            <div>About us</div>
+        </div>  
+
+        
+
+    </div>
+
+    <div class="body">
+        <div class="chooseRole">
+            <img src="images/user.png" />
+            <p>Choose Your Role</p>
+        </div>
+        
+        <div class="RPBtns">
+            <button onclick="document.location='Proprietor_Home.html'" class="roleBtn">Proprietor</button>
+            <button onclick="document.location='Renter_Home.html'" class="roleBtn">Renter</button>
+        </div>
+        
+    </div>
+
+    <div class="footer">
+        <div class="socialBtn"> 
+            <a href="https://www.facebook.com" target="_blank">
+            <img src="images/facebook.png" alt="facebook" title="Facebook"  width="16px">
+            </a>
+        </div>
+
+        <div class="socialBtn">
+            <a href="https://www.instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="instagram" title="Instagram" width="16px">
+            </a>
+        </div>
+
+        <div class="socialBtn">
+            <a href="https://www.gmail.com" target="_blank">
+            <img src="images/email.png" alt="email" title="Email" width="16px">
+            </a>
+        </div>
+
+        <p>&copy; 2020 RPC System</p>
+        <p style="cursor: pointer;">Terms of Use | Privacy Policy  </p>
+    </div>
+
+</body>
+
+</html>
+
+<script src="botCode.js"></script>
